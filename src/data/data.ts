@@ -1,0 +1,68 @@
+enum status {
+  UNVERIFIED,
+  REFUNDED,
+  CANCELLED,
+  VERIFIED,
+  FULFILLED,
+}
+
+type OrderStatus = keyof typeof status;
+
+export interface Ordertype {
+  orderID?: string;
+  orderStatus: OrderStatus;
+  companyName?: string;
+  customerName?: string;
+  purDate?: string;
+  fulfillDate?: string;
+  invoiceStatus?: "Paid" | "Unpaid";
+  amount?: number;
+  currency?: string;
+}
+
+export const orders: Ordertype[] = [
+  {
+    orderID: "2543",
+    orderStatus: "FULFILLED",
+    companyName: "GÅRDSBUA AS",
+    customerName: "John Doe",
+    purDate: "26 Jan 2022",
+    fulfillDate: "26 Jan 2022",
+    invoiceStatus: "Paid",
+    amount: 250,
+    currency: "NOK",
+  },
+  {
+    orderID: "2544",
+    orderStatus: "FULFILLED",
+    companyName: "GÅRDSBUA AS",
+    customerName: "John Doe",
+    purDate: "26 Jan 2022",
+    fulfillDate: "26 Jan 2022",
+    invoiceStatus: "Paid",
+    amount: 400,
+    currency: "NOK",
+  },
+  {
+    orderID: "2502",
+    orderStatus: "VERIFIED",
+    companyName: "GÅRDSBUA AS",
+    customerName: "James Smith",
+    purDate: "29 Jan 2022",
+    fulfillDate: "30 Jan 2022",
+    invoiceStatus: "Paid",
+    amount: 630,
+    currency: "PKR",
+  },
+  {
+    orderID: "2548",
+    orderStatus: "UNVERIFIED",
+    companyName: "LOMES LLC",
+    customerName: "Barry Jones",
+    purDate: "23 Jan 2022",
+    fulfillDate: "25 Jan 2022",
+    invoiceStatus: "Unpaid",
+    amount: 980,
+    currency: "USD",
+  },
+];
