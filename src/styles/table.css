@@ -46,7 +46,7 @@ td:last-child {
     background: white;
 }
   
-.customer-name > span {
+.customer-name > span:last-child {
     font-size: 12px;
     margin-top: 4px;
 }
