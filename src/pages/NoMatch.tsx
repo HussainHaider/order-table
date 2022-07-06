@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 
-import {HOME} from '../constants/urlConstant';
+import {HOME} from 'constants/urlConstant';
 
 function NoMatch() {
     return (
