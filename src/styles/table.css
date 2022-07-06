@@ -1,3 +1,9 @@
+.loading {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}
+
 table {
     font-family: arial, sans-serif;
     border-collapse: separate;
