@@ -1,5 +1,5 @@
 import {useAppDispatch} from 'app/hooks';
-import { filterOrders } from "app/features/orders/orderSlice";
+import {filterOrders} from "app/features/orders/orderSlice";
 import "styles/input.css";
 
 
