@@ -21,7 +21,7 @@ export const Table = () => {
 
   return (<>
   {
-    loading ? (<ReactLoading type='balls' />) : (  <table>
+    loading ? (<ReactLoading type='spinningBubbles' />) : (  <table>
       <TableHeader />
       <TableBody />
     </table>)
