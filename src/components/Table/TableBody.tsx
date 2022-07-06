@@ -8,7 +8,7 @@ export const TableBody = () => {
     {data.map((order) => (
       <tr key={order.orderID}>
         <td>{order.orderID}</td>
-        <td>{order.orderStatus}</td>
+        <td className='status'>{order.orderStatus}</td>
         <td className='customer-name'>
             <span>{order.companyName}</span>
             <span>{order.customerName}</span>

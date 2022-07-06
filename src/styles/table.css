@@ -42,6 +42,10 @@ td:last-child {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
+
+.status {
+    text-transform: capitalize;
+}
   
 .customer-name {
     display: flex;

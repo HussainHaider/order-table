@@ -10,7 +10,7 @@ export function fetchOrders() {
       let filledDate = `${date.getDate()} ${date.toLocaleString('default', { month: 'short' })} ${date.getFullYear()}`
       data.push({
         orderID: faker.random.numeric(4),
-        orderStatus: "FULFILLED",
+        orderStatus: faker.helpers.arrayElement(["UNVERIFIED", "REFUNDED", "CANCELLED", "VERIFIED", "FULFILLED"]),
         companyName: faker.company.companyName(),
         customerName: faker.name.findName(),
         purDate: filledDate,
