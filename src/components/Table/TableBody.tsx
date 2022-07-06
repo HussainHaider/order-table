@@ -1,24 +1,10 @@
 import {useAppSelector} from 'app/hooks';
-import {selectOrders, isLoading } from "app/features/orders/orderSlice";
-
+import {selectOrders} from "app/features/orders/orderSlice";
 
 export const TableBody = () => {
   const data = useAppSelector(selectOrders);
-  const loading = useAppSelector(isLoading);
 
   return (<tbody>
-    {
-      loading ? (
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>Loading...</td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      ) : (<>
         {data.map((order) => (
             <tr key={order.orderID}>
               <td>{order.orderID}</td>
@@ -33,10 +19,7 @@ export const TableBody = () => {
               <td className="curreny">{order.currency} {order.amount}</td>
             </tr>
         ))}
-      </>)
-    }
-    </tbody>
-  );
+      </tbody>);
 };
 
 export default TableBody;
