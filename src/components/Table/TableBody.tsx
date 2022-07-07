@@ -6,7 +6,7 @@ export const TableBody = () => {
 
   return (<tbody>
     {data.map((order) => (
-      <tr key={order.orderID}>
+      <tr key={order.orderID} data-testid={`order-${order.orderID}`}>
         <td>{order.orderID}</td>
         <td className='status'>{order.orderStatus}</td>
         <td className='customer-name'>

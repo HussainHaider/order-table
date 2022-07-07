@@ -24,7 +24,7 @@ export const getOrdersAsync = createAsyncThunk(
   }
 );
 
-export const counterSlice = createSlice({
+export const orderSlice = createSlice({
   name: "orders",
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
@@ -54,9 +54,9 @@ export const counterSlice = createSlice({
   },
 });
 
-export const { filterOrders } = counterSlice.actions;
+export const { filterOrders } = orderSlice.actions;
 
 export const selectOrders = (state: RootState) => state.orders.data;
 export const isLoading = (state: RootState) => state.orders.isLoading;
 
-export default counterSlice.reducer;
+export default orderSlice.reducer;

@@ -1,15 +1,20 @@
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event'
+import { screen } from '@testing-library/react';
 import {BrowserRouter} from 'react-router-dom'
-import { Provider } from 'react-redux';
-import { store } from 'app/store';
+import { renderWithProviders } from 'utils/test-utils';
 import TableBody from './TableBody';
+import { orders } from "data/data";
 
 
-
-test('renders the TableBody component', async () => {
-  render( <Provider store={store}><TableBody /></Provider>, {wrapper: BrowserRouter});
-//   expect(screen.getByTestId('search-box')).toBeInTheDocument();
-//   expect(screen.getByTestId('loading')).toBeInTheDocument();
-});
-  
+describe('TableBody component', () => {
+  test('renders the TableBody component', async () => {
+    renderWithProviders(<BrowserRouter><TableBody /></BrowserRouter>, {
+        preloadedState: {
+            orders: {
+                isLoading: false,
+                content: orders,
+                data: orders
+            }
+    }});
+    expect(screen.getAllByTestId(/order-/i).length).toEqual(4);
+  });
+}); 

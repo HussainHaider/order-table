@@ -1,19 +1,19 @@
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event'
+import { screen } from '@testing-library/react';
 import {BrowserRouter} from 'react-router-dom'
-import { Provider } from 'react-redux';
-import { store } from 'app/store';
+import { renderWithProviders } from 'utils/test-utils';
 import Orders from './Orders';
 
-test('renders the Order component', async () => {
-  render( <Provider store={store}><Orders /></Provider>, {wrapper: BrowserRouter});
-  expect(screen.getByTestId('search-box')).toBeInTheDocument();
-  expect(screen.getByTestId('loading')).toBeInTheDocument();
-});
 
-test('renders the TABLE data', async () => {
-    render( <Provider store={store}><Orders /></Provider>, {wrapper: BrowserRouter});
+describe('Orders component', () => {
+  test('renders the Order component', async () => {
+    renderWithProviders(<BrowserRouter><Orders /></BrowserRouter>);
     expect(screen.getByTestId('search-box')).toBeInTheDocument();
     expect(screen.getByTestId('loading')).toBeInTheDocument();
-});
+  });
   
+  test('renders the TABLE data', async () => {
+    renderWithProviders(<BrowserRouter><Orders /></BrowserRouter>);
+    expect(screen.getByTestId('search-box')).toBeInTheDocument();
+    expect(screen.getByTestId('loading')).toBeInTheDocument();
+  });
+}); 

@@ -1,14 +1,11 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event'
 import {BrowserRouter} from 'react-router-dom'
-import { Provider } from 'react-redux';
-import { store } from './app/store';
+import { renderWithProviders } from 'utils/test-utils';
 import App from './App';
 
 test('renders the /order route', async () => {
-  render( <Provider store={store}>
-    <App />
-  </Provider>, {wrapper: BrowserRouter});
+  renderWithProviders(<BrowserRouter><App /></BrowserRouter>);
   const user = userEvent.setup();
 
   // verify page content for expected route after navigating
