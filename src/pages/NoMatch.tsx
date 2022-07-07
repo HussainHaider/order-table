@@ -8,7 +8,7 @@ function NoMatch() {
       <div>
         <h2>It looks like you're lost...</h2>
         <p>
-          <Link to={HOME}>Go to the home page</Link>
+          <Link to={HOME} data-testid='home-link'>Go to the home page</Link>
         </p>
       </div>
     );
